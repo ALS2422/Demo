@@ -1,0 +1,20 @@
+﻿@model SampleCalculator.Models.User
+
+
+<h1>Html.DisplayFor Example</h1>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class = "form-horizontal">
+        <span>Enter User Name:</span> @Html.TextBoxFor(model => model.UserName)<br />
+        <span>Enter Email: </span> @Html.TextBoxFor(model => model.Email)<br />
+
+        <input id="Submit" type="submit" value="submit" />
+    </div>
+}
+
+<hr />
+
+<strong>UserName: </strong> @Html.DisplayFor(model => model.UserName)<br />
+<strong>Email: </strong> @Html.DisplayFor(model => model.Email)<br />
